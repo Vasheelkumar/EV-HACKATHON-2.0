@@ -1,4 +1,4 @@
-# EV-HACKATHON-2.0
+# Design and Simulation of Electric Vehicle
 Project Overview:
 For the EV Hackathon 2.0 competition, my team and I developed a cutting-edge project that aimed to address a significant challenge in the electric vehicle (EV) industry. Our project focused on design eletric vehicle based powertrain in matlabfor existing 2W or 4W
 
