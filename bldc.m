@@ -1,0 +1,27 @@
+cd=0.5546;
+a=2.142;
+cr=0.010;
+m=1757;
+g=9.81;
+v=12.5;
+d=0.304;
+acc=0.5618;
+p=1.2;
+aero=0.5*p*cd*a*(v^2);
+roll=cr*m*g;
+theta =9.45;
+gradient = m*g*sind(theta);
+inertia_force= m*acc;
+tractive_effort_needed = aero+roll+inertia_force;
+power_needed = (tractive_effort_needed*v)/1000;
+tractive_effort_available = ((14*1000*0.9)/v) +((2*1000)/v);
+ge =tractive_effort_needed /tractive_effort_available;
+roll = cr*m*g*sind(theta);
+tractive_effort_gradient = roll+gradient;
+ge1=tractive_effort_gradient/(tractive_effort_available)
+%% final drive ratio 
+n1= ((v*60)/(2*3.14*(d/2)))*ge1;
+gear= (2*3.14*(d/2)*n1)/(60*v)
+n_wheel = n/gear;
+torque_needed = (power_needed*60*1000)/(2*3.14*n1*0.9)
+torque_wheel = torque_needed *gear
